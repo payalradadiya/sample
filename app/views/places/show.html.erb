@@ -1,0 +1,12 @@
+<header><h1 class="display-4"><%= @place.title %></h1></header>
+
+<p>Address: <%= @place.address %></p>
+<p>Coordinates: <%= @place.latitude %> <%= @place.longitude %></p>
+
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@place.latitude}%2C#{@place.longitude}" %>
+ <h3>Nearby locations</h3>
+<ul>
+<% for place in @place.nearbys(3) %>
+  <li><%= link_to place.address, place %> (<%= place.distance.round()/0.7 %> km)</li>
+<% end %>
+</ul>

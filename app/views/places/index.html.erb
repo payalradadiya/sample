@@ -1,0 +1,20 @@
+<header><h1 class="display-4">Places</h1></header>
+
+<%= link_to 'Add place', new_place_path, class: 'btn btn-primary btn-lg' %>
+<%= form_tag places_path, :method => :get do %>
+  <p>
+    <%#= text_field_tag :search, params[:search] %>
+    <%#= submit_tag "Search Near", :name => nil %>
+  </p>
+<% end %>
+
+<div class="card">
+  <div class="card-block">
+    <ul>
+     <% for place in @places %>
+     
+      <% end %>
+       <%= render @places %>
+    </ul>
+  </div>
+</div>
